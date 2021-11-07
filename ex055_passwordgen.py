@@ -12,26 +12,29 @@ nr_letters = int(input("How many letters would you like in your password?\n"))
 nr_symbols = int(input(f"How many symbols would you like in your password?\n"))
 nr_numbers = int(input(f"How many numbers would you like in your password?\n"))
 
-password = ""
+password = []
 
 # Generate the random characters for each type for the given password length
 
 for char in range (1,nr_letters + 1):
     password += random.choice(letters)
-    print(password)
+    #print(password)
 
 for char in range(1,nr_symbols + 1):
     password += random.choice(symbols)
-    print(password)
+    #print(password)
 
 for char in range(1,nr_numbers + 1):
-    password += random.choice(symbols)
-    print(password)
+    password += random.choice(numbers)
+    #print(password)
 
 # Randomizes the order of the character types and displays password as string
     
-password = list(password)
-password_shuffled = random.shuffle(password)
-print(password)
-password_as_string = ""
-print(password_as_string.join(password))
+#print(password)
+random.shuffle(password)
+#print(password)
+password_string = ""
+for char in password:
+    password_string += char
+
+print(f"Your password is: {password_string}")   
